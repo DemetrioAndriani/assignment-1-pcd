@@ -2,6 +2,15 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.RenderingHints;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import javax.swing.*;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -38,12 +47,14 @@ public class Gui {
 		setUpScrollPane();
 
 		this.startButton = addButton("Start");
+
 		this.pauseButton = addButton("Pause");
 
 		setUpButtons();
 
 		this.frame.pack();
 		this.frame.setVisible(true);
+
 	}
 
 	private void setUpFrame() {
@@ -57,7 +68,6 @@ public class Gui {
 
 	private void setUpScrollPane() {
 		scrollPane.setPreferredSize(new Dimension(500, 500));
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
 	}
 
@@ -67,7 +77,7 @@ public class Gui {
 
 			try {
 				startButton.setEnabled(false);
-				compute();
+				start();
 			} catch (Exception e) {
 			}
 
@@ -82,7 +92,7 @@ public class Gui {
 
 	}
 
-	private void compute() {
+	private void start() {
 	//inserire codice per far partire simulaizone;
 	}
 
@@ -129,3 +139,4 @@ public class Gui {
 	}
 
 }
+
